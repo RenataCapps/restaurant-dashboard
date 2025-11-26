@@ -66,12 +66,14 @@ def get_database_connection():
             host='db-mysql-itom-do-user-28250611-0.j.db.ondigitalocean.com',
             port=25060,
             user='restaurant_readonly',
-            password='AVNS_VX3BI0zHtPXibW_9LK5',
-            database='restaurant'
+            password='SecurePassword123!',
+            database='restaurant',
+            connect_timeout=10
         )
         return connection
     except mysql.connector.Error as err:
         st.error(f"❌ Database connection failed: {err}")
+        st.error("Please check your database credentials in the code")
         return None
 
 # Test database connection
